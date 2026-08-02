@@ -6,6 +6,11 @@ interface GeminiResponse {
   }[];
 }
 
+export interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 export interface InsightData {
   feasibility: {
     status: 'viable' | 'needs_adjustment' | 'unfeasible';
@@ -52,4 +57,26 @@ export const getInsight = async (prompt: string) => {
   const response = await callGeminiAPI(prompt);
   const json = response.candidates[0].content.parts[0].text;
   return JSON.parse(json) as InsightData;
+};
+
+export const getEducatorResponse = async (
+  question: string,
+  history: ChatMessage[],
+  context: string,
+) => {
+  const prompt = `Você é um Educador Financeiro acolhedor e prático. Responda em português, de forma objetiva e útil.
+
+Contexto da pessoa:
+${context}
+
+Histórico da conversa:
+${history.map((message) => `${message.role === 'user' ? 'Usuário' : 'Educador'}: ${message.content}`).join('\n')}
+
+Pergunta atual do usuário:
+${question}
+
+Responda de forma curta, com orientação prática e sem assumir que a pessoa tem conhecimento técnico.`;
+
+  const response = await callGeminiAPI(prompt);
+  return response.candidates[0].content.parts[0].text;
 };

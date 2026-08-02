@@ -1,5 +1,5 @@
+import type { ChatMessage, InsightData } from '@/service/aiService';
 import { CalendarClock, CreditCard, Goal, Landmark, PiggyBank, Wallet } from 'lucide-react';
-import type { InsightData } from '@/service/aiService';
 
 import type { FormStepProps } from '@/components/features/Simulation/FormStep';
 
@@ -77,9 +77,18 @@ export const simulationFormSteps = [
   },
 ] satisfies FormStepProps[];
 
-export type SimulationFormData = Record<(typeof simulationFormSteps)[number]['id'], string>;
+export interface SimulationFormData {
+  income: string;
+  expenses: string;
+  debts: string;
+  goalName: string;
+  goalAmount: string;
+  goalDeadline: string;
+}
 
 export type SimulationRecord = SimulationFormData & {
   id: string;
+  createdAt?: string;
   insight?: InsightData;
+  chatHistory?: ChatMessage[];
 };
