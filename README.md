@@ -1,37 +1,62 @@
-Educador financeiro que ajuda a economizar dinheiro
-adicionei a aba que salva o historico
-e tambem criei o chat para conversar com  a ia
+# Educador Financeiro com IA
 
+Este projeto é uma aplicação web em React + TypeScript para ajudar pessoas a planejar metas financeiras de forma simples e prática. A ideia é guiar o usuário por uma simulação de orçamento, mostrar quanto precisa economizar por mês para alcançar uma meta e oferecer orientações mais personalizadas com ajuda de IA.
 
-# React + TypeScript + Vite
+## O que o projeto faz
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+- Ajuda a montar uma simulação financeira com base em renda, despesas, dívidas e prazo da meta.
+- Calcula o valor necessário de economia mensal para atingir o objetivo.
+- Exibe uma página de resultados com informações claras e visualmente organizadas.
+- Permite conversar com uma assistente financeira por meio de IA.
+- Salva o histórico das simulações no navegador para consulta posterior.
 
-Currently, two official plugins are available:
+## Como executar a aplicação
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Instale as dependências:
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categ
+2. Crie um arquivo chamado `.env.local` na raiz do projeto e adicione sua chave da API do Gemini:
+
+```env
+VITE_GEMINI_API_KEY=sua-chave-aqui
+```
+
+3. Inicie o projeto:
+
+```bash
+npm run dev
+```
+
+4. Abra o endereço exibido no terminal, normalmente `http://localhost:5173`.
+
+## Tecnologias usadas
+
+- React
+- TypeScript
+- Vite
+- React Router
+- Tailwind CSS
+- Lucide React
+- Local Storage para salvar o histórico
+- API Gemini para gerar insights e respostas em linguagem natural
+
+## Melhoria implementada
+
+A principal melhoria foi adicionar um fluxo completo de histórico de simulações e um painel de conversa com IA, tornando a experiência mais personalizada e útil para o usuário.
+
+## Como testar o fluxo principal
+
+1. Acesse a página inicial da aplicação.
+2. Preencha os dados da simulação: nome da meta, valor, prazo, renda, despesas e dívidas.
+3. Avance pelas etapas do formulário até concluir.
+4. Veja o resultado da economia mensal e os insights gerados.
+5. Abra a página de histórico e confirme que a simulação foi salva.
+6. Teste o chat para ver a resposta da IA no contexto da simulação.
+
+## O que aprendi durante o desafio
+
+Durante o desenvolvimento, aprendi a organizar melhor um fluxo de cadastro em várias etapas, integrar uma API externa em uma aplicação frontend e trabalhar com persistência local para melhorar a experiência do usuário. Também percebi como a combinação de interface, lógica financeira e IA pode tornar um projeto mais completo e útil.
+
