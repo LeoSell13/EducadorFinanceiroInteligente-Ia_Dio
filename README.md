@@ -59,4 +59,3 @@ A principal melhoria foi adicionar um fluxo completo de histórico de simulaçõ
 ## O que aprendi durante o desafio
 
 Durante o desenvolvimento, aprendi a organizar melhor um fluxo de cadastro em várias etapas, integrar uma API externa em uma aplicação frontend e trabalhar com persistência local para melhorar a experiência do usuário. Também percebi como a combinação de interface, lógica financeira e IA pode tornar um projeto mais completo e útil.
-

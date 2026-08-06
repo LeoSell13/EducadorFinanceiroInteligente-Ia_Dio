@@ -10,9 +10,9 @@ const baseClasses =
   'flex cursor-pointer items-center justify-center  font-medium text-sm gap-2 px-4 py-3 transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-80';
 
 const variantClasses = {
-  primary: 'bg-primary text-primary-foreground font-semiboldhover rouded-x1',
-  secondary: 'bg-secondary-buton borde border-border rounded-3x1',
-  ghost: 'roudedd-lg text-foreground',
+  primary: 'bg-primary text-primary-foreground font-semibold hover:opacity-90 rounded-xl',
+  secondary: 'bg-secondary-button border border-border rounded-xl',
+  ghost: 'rounded-lg text-foreground',
 };
 
 export function Button({ variant, icon: Icon, children, className, ...props }: ButtonProps) {

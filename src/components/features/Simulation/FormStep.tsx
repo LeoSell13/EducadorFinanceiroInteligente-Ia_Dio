@@ -59,7 +59,7 @@ export function FormStep({
           value={inputValue}
           onChange={(e) =>
             setInputValue(
-              inputProps.prefix === 'R$ ' ? formatCurrencyMask(e.target.value) : e.target.value,
+              inputProps.prefix === 'R$' ? formatCurrencyMask(e.target.value) : e.target.value,
             )
           }
         />
